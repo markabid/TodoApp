@@ -1,0 +1,33 @@
+.add-bar {
+  background-color: rgb(62, 152, 255);
+  padding: 5 10;
+}
+.add-bar Image {
+  height: 15;
+  vertical-align: center;
+  margin-left: 10;
+  margin-right: 5;
+}
+.title{
+  padding-top: 20;
+  font-size: 25px;
+}
+.label-name{
+  color: black;
+}
+/* .btn-img{
+  border-radius: 5;
+  border-width: 1;
+  color: white;
+  margin: 10;
+  font-size: 22;
+  border-color: #2b3c6a;
+  background-color: #3B5997;
+} */
+TextField {
+  color: white;
+}
+ActionBar {
+  background-color:  rgb(62, 152, 255);
+  color: white;
+}
