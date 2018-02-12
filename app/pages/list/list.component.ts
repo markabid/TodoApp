@@ -23,8 +23,9 @@ export class ListComponent implements OnInit {
     mostRecent: Array<any>;
     todo = "";
     id; 
+    blackCheckBox = "https://cdn2.iconfinder.com/data/icons/social-messaging-productivity-1-1/128/checkbox-2-256.png";
+    greenCheckBox = "https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/check-circle-green-256.png";
     @ViewChild("todoTextField") todoTextField: ElementRef;
-    @ViewChild("CB1") FirstCheckBox: ElementRef;
 
     ngOnInit() {
         this.todoList = JSON.parse(ApplicationSettings.getString("todo", "[]"));
@@ -61,6 +62,7 @@ export class ListComponent implements OnInit {
 
         const todoItem = {
             todoText: this.todo,
+            checkLink: this.blackCheckBox,
             isDone: false,
             dateCreated: new Date().toISOString().substring(0, 10),
             id: this.id + 1
@@ -73,20 +75,22 @@ export class ListComponent implements OnInit {
     }
 
     check(text, date, id, curBool){
+        var checkIconLink = this.blackCheckBox;
         var temp = false;
         if(!curBool){
             temp = true; 
+            checkIconLink = this.greenCheckBox;
         }
 
         const item = {
             todoText: text,
+            checkLink: checkIconLink,
             isDone: temp,
             dateCreated: date,
             id: id
         }
 
         this.todoList.splice(this.todoList.findIndex(x => x.id == item.id), 1, item);
-        //this.todoList[this.todoList.findIndex(x => x.id == item.id)] = item;
         if(temp){
             if(this.mostRecent.length >= 3){
                 this.mostRecent.splice(2, 1);
