@@ -91,7 +91,7 @@ export class ListComponent implements OnInit {
         }
 
         this.todoList.splice(this.todoList.findIndex(x => x.id == item.id), 1, item);
-        if(temp){
+        if(this.mostRecent.indexOf(text) == -1 && temp){
             if(this.mostRecent.length >= 3){
                 this.mostRecent.splice(2, 1);
             }
