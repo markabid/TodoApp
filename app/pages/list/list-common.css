@@ -14,16 +14,8 @@
 }
 .label-name{
   color: black;
+  padding-bottom: 20;
 }
-/* .btn-img{
-  border-radius: 5;
-  border-width: 1;
-  color: white;
-  margin: 10;
-  font-size: 22;
-  border-color: #2b3c6a;
-  background-color: #3B5997;
-} */
 TextField {
   color: white;
 }
