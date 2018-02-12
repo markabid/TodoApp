@@ -16,7 +16,6 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent {
     constructor(private page: Page, private router: Router) {
-        //page.backgroundImage = 'http://www.mulierchile.com/hd-mobile-nature-wallpapers/hd-mobile-nature-wallpapers-014.jpg';
         page.actionBarHidden = true;
     }
 
