@@ -54,7 +54,7 @@ export class ListComponent implements OnInit {
         textField.dismissSoftInput();
         textField.text = "";
 
-        const todoItem = {
+        const todoItem:ITodo = {
             todoText: this.todo,
             checkLink: this.blackCheckBox,
             isDone: false,
@@ -76,7 +76,7 @@ export class ListComponent implements OnInit {
             checkIconLink = this.greenCheckBox;
         }
 
-        const item = {
+        const item:ITodo = {
             todoText: text,
             checkLink: checkIconLink,
             isDone: temp,
@@ -125,4 +125,12 @@ export class ListComponent implements OnInit {
             SocialShare.shareText(stringToShare, "How would you like to share your 3 most recently completed items?");
         }
     }
+}
+
+interface ITodo{
+    todoText: string,
+    checkLink: string,
+    isDone: boolean,
+    dateCreated: string,
+    id: number
 }
