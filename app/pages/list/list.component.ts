@@ -23,8 +23,8 @@ export class ListComponent implements OnInit {
     mostRecent: Array<any>;
     todo = "";
     id; 
-    blackCheckBox = "https://cdn2.iconfinder.com/data/icons/social-messaging-productivity-1-1/128/checkbox-2-256.png";
-    greenCheckBox = "https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/check-circle-green-256.png";
+    blackCheckBox = "~/images/check_black.png";
+    greenCheckBox = "~/images/check_green.png";
     @ViewChild("todoTextField") todoTextField: ElementRef;
 
     ngOnInit() {
