@@ -1,15 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild, NgModule } from "@angular/core";
-import { TNSCheckBoxModule } from 'nativescript-checkbox/angular';
 import { TextField } from "ui/text-field";
 import { Todo } from "../../shared/todo/todo";
 import * as ApplicationSettings from "application-settings";
 import * as SocialShare from "nativescript-social-share";
 import * as dialogs from "ui/dialogs";
-
-@NgModule({
-    imports: [TNSCheckBoxModule],
-    // etc.
-})
 
 @Component({
   selector: "list",
