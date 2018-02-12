@@ -4,6 +4,7 @@ import { TextField } from "ui/text-field";
 import { Todo } from "../../shared/todo/todo";
 import * as ApplicationSettings from "application-settings";
 import * as SocialShare from "nativescript-social-share";
+import * as dialogs from "ui/dialogs";
 
 @NgModule({
     imports: [TNSCheckBoxModule],
@@ -31,9 +32,18 @@ export class ListComponent implements OnInit {
         this.id = ApplicationSettings.getNumber("id",0);
     }
 
-    delete(id){
-        this.todoList.splice(this.todoList.findIndex(x => x.id == id), 1);
-        ApplicationSettings.setString("todo", JSON.stringify(this.todoList));
+    delete(id, text){
+        dialogs.confirm({
+            title: "Delete",
+            message: "Are you sure you would like to delete " + "'" + text + "'" + " from your todo list?",
+            okButtonText: "Confirm",
+            cancelButtonText: "Cancel"
+        }).then(result => {
+            if(result){
+                this.todoList.splice(this.todoList.findIndex(x => x.id == id), 1);
+                ApplicationSettings.setString("todo", JSON.stringify(this.todoList));
+            }
+        });
     }
 
     add(){
@@ -58,7 +68,6 @@ export class ListComponent implements OnInit {
         ApplicationSettings.setString("todo", JSON.stringify(this.todoList));
         this.id++;
         ApplicationSettings.setNumber("id", this.id);
-        console.log(this.id+1);
     }
 
     check(text, date, id, curBool){
