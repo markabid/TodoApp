@@ -18,7 +18,7 @@
             <Image [src]="item.checkLink" (tap)="check(item.todoText, item.dateCreated, item.id, item.isDone)" rowSpan="2" width="36" height="36" margin="3" verticalAlignment="center"></Image>
             <Label [text]="item.todoText" class="label-name" textWrap="true" col="1" colSpan="2" rowSpan="2" minHeight="50" fontSize="20" verticalAlignment="center" margin="3"></Label>
             <Label [text]="setDate(item.dateCreated)" class="date" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
-            <Image src="https://cdn3.iconfinder.com/data/icons/glyph/227/Cancel-256.png" (tap)="delete(item.id, item.todoText)" col="1" rowSpan="2" horizontalAlignment="right" width="24" height="24" marginRight="10" verticalAlignment="center"></Image>
+            <Image src="~/images/delete.png" (tap)="delete(item.id, item.todoText)" col="1" rowSpan="2" horizontalAlignment="right" width="24" height="24" marginRight="10" verticalAlignment="center"></Image>
         </GridLayout>
     </ng-template>
 </ListView>
